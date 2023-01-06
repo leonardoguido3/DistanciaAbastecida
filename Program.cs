@@ -1,10 +1,13 @@
-﻿namespace DistanciaAbastecida
+﻿using DistanciaAbastecida.Entidades;
+
+namespace DistanciaAbastecida
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            CalculoDistancia calculo = new CalculoDistancia();
+            calculo.CapturarValores();
         }
     }
 }
