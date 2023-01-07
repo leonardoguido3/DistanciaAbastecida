@@ -20,12 +20,13 @@ namespace DistanciaAbastecida.Entidades
 
             var valorValidado = ValidarOsValores(quantidadeCombustivel, quilometragem);
 
-            if (valorValidado == true)
+            if (valorValidado == false)
             {
-                CalcularTotal(quantidadeCombustivel, quilometragem);
+                Console.WriteLine("Houve um erro nos valores informado!");       
             }
-            Console.WriteLine("Houve um erro nos valores informado!");
+            CalcularTotal(quantidadeCombustivel, quilometragem);
         }
+
         private bool ValidarOsValores(double quantidadeCombustivel, double quilometragem)
         {
             if (quantidadeCombustivel <= 0.0 || quilometragem <= 0.0)
@@ -39,7 +40,7 @@ namespace DistanciaAbastecida.Entidades
         public void CalcularTotal(double quantidadeCombustivel, double quilometragem)
         {
             double total = quilometragem * quantidadeCombustivel;
-            Console.WriteLine("\nA distancia máxima que seu veículo pode percorrer é : " + total + "Km");
+            Console.WriteLine($"\nA distancia máxima que seu veículo pode percorrer é {total.ToString("N2")} (Km)");
         }
     }
 }
